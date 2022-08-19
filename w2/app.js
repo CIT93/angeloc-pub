@@ -1,7 +1,7 @@
 const showOnPage = function(text) {
 let newParagrapgh = document.createElement("p")
 newParagrapgh.innerHTML = text
-let outputDiv = document.getElementedById("output")
+let outputDiv = document.getElementById("output")
 outputDiv.append(newParagrapgh)
 
 }
@@ -32,4 +32,3 @@ console.log("My time to drive" + myTimeToDrive)
 console.log("time to eat before" + TimeToEatBefore)
 
   displayOnPage("Time to drive today")
-  
