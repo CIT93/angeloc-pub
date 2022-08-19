@@ -30,3 +30,6 @@ console.log("work Time" + workStartTime)
 console.log("available time before work" + availableTime)
 console.log("My time to drive" + myTimeToDrive)
 console.log("time to eat before" + TimeToEatBefore)
+
+  displayOnPage("Time to drive today")
+  
