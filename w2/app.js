@@ -1,4 +1,4 @@
-const showOnPage = function(text) {
+const showOnPage = function (text) {
 let newParagrapgh = document.createElement("p")
 newParagrapgh.innerHTML = text
 let outputDiv = document.getElementById("output")
@@ -32,3 +32,8 @@ console.log("My time to drive" + myTimeToDrive)
 console.log("time to eat before" + TimeToEatBefore)
 
   displayOnPage("Time to drive today")
+  if (currentTime == "time before work" && TimeToEatBefore == "time before 11") {
+summary = "if I have enough time eat some food"
+  } else if (currentTime == "time before work") {
+
+  }
