@@ -30,5 +30,6 @@ todos.forEach(function (todo) {
 })
 
 
-//you have 2 todos left (p element)
-//add a p for each todo above
+document.querySelector("button").addEventListener("click", function (e) {
+console.log("add new todo")
+})
