@@ -14,11 +14,7 @@ const notes = [{
     })
 
 
-document.querySelector("remove-all").addEventListener("click", function () {
-    document.querySelectorAll(".note").forEach(function(note) {
-        note.remove()
-    })
-})
+
 
 document.querySelector("#search-text").addEventListener("input", function (e) {
 console.log(e.target.value)
@@ -50,7 +46,9 @@ const renderNotes = function (notes, filters) {
         renderNotes(notes, filters)
     })
 
-
+    document.querySelector("#filter-by").addEventListener("change", function (e) {
+        console.log(e.target.value)
+    })
 
     //DOM - Document object model
 
