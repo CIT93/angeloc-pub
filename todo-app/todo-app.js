@@ -22,9 +22,7 @@ const todos = [{
 document.querySelector("#add-todo").addEventListener("click", function (e) {
 console.log("add new todo")
 })
-document.querySelector("#todo-text").addEventListener("input", function (e) {
-    console.log(e.target.value)
-})
+
 
     const filters = {
         searchText: ""
@@ -50,15 +48,26 @@ document.querySelector("#todo-text").addEventListener("input", function (e) {
         })
 
     }
+    rendertodo(todos, filters)
 
 document.querySelector("#search-Text").addEventListener("input", function (e) {
     filters.searchText = e.target.value
     rendertodo(todos, filters)
 })
 
+document.querySelector("#new-todo").addEventListener("submit", function () {
+    e.preventDefault()
+    todo.push({
+        text: e.target.elements.text.value,
+        completed: false
+    })
     rendertodo(todos, filters)
+    text: e.target.elements.text.value = ""
+})
 
 
-//1.setup a div contain for todos
-//2.setup filters(search text)
-//3.create rendertodo function
+//1.create a form with single input for todo text
+//2.setup submit handler and cancel the default action
+//3.add a new item to the todos array
+//4.rerender the application
+//5.clear the input value
