@@ -1,18 +1,37 @@
+const notes = [{
+    title: "my next trip",
+    body: "I would like to go back home"
+    }, {
+    title: "habbits to work on",
+    body: "Exercise. running more."
+    }, {
+    title: "office modification",
+    body: "get a new seat"
+    }]
 
-//DOM - Document object model
+    document.querySelector("#create-note").addEventListener("click", function (e) {
+       e.target.textContent = "button was clicked"
+    })
+
+
+document.querySelector("remove-all").addEventListener("click", function () {
+    document.querySelectorAll(".note").forEach(function(note) {
+        note.remove()
+    })
+})
+
+document.querySelector("#search-text").addEventListener("input", function (e) {
+console.log(e.target.value)
+})
+
+
+
+
+
+
+
+    //DOM - Document object model
 
 //query and remove
 //const p = document.querySelector("p")
 //p.remove()
-
-
-//query all and remove
-
-const ps = document.querySelectorAll("p")
-
-
-ps.forEach(function (p) {
- p.textContent = "*****"
-    //console.log(p.textContent)
-    //p.remove
-})
