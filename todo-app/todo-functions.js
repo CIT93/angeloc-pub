@@ -14,6 +14,8 @@ const saveTodos = function (todos) {
     localStorage.setItem("todos", JSON.stringify(todos))
 }
 
+debugger
+
 //render applications todos based on filters
 const rendertodo = function (todo, filters) {
     let filterTodos = todos.filter(function (todo) {
@@ -27,6 +29,11 @@ const rendertodo = function (todo, filters) {
             return true
         }
     })
+
+    //1.setup a root div
+    //2.setup and append a checkbox 
+    //3.setup and append a span
+    //4.setup and append a button 
 
 
     const incompleteToDos = filterTodos.filter(function (todo) {
@@ -43,9 +50,21 @@ const rendertodo = function (todo, filters) {
 
 //get the dom elements for an individual note
 const generateTodoDom = function (todo) {
-    const p = document.createElement("p")
-    p.textContent = todo.text
-    return p
+    const todoEl = document.createElement("div")
+    const checkbox = document.createElement("input")
+    const todoText = document.createElement("span")
+    const removeButton = document.createElement("button")
+
+checkbox.setAttribute("type", "checkbox")
+todoEl.appendChild(checkbox)
+
+    todoText.textContent = todo.text
+    todoEl.appendChild(todoText)
+
+    removeButton.textContent = "x"
+    todoEl.appendChild(removeButton)
+
+    return todoEl
 }
 
 //get the dom elements for list summary
