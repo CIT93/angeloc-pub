@@ -50,6 +50,18 @@ const renderNotes = function (notes, filters) {
         console.log(e.target.value)
     })
 
+    const user = {
+        name: "angelo",
+        age: "20"
+    }
+
+
+    const userJson = localStorage.getItem("user")
+   // const user = JSON.parse(userJson)
+    console.log(`${userJson.name} is ${userJson.age}`)
+   // const userJson = JSON.stringify(user)
+    //console.log(userJson)
+   // localStorage.setItem("user", userJson)
     //DOM - Document object model
 
 //query and remove
