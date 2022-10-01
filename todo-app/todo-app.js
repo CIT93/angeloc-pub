@@ -30,6 +30,7 @@ document.querySelector("#search-Text").addEventListener("input", function (e) {
 document.querySelector("#new-todo").addEventListener("submit", function () {
     e.preventDefault()
     todo.push({
+        id: uuid4(),
         text: e.target.elements.text.value,
         completed: false
     })
