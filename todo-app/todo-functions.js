@@ -1,6 +1,6 @@
-//1.wire up button event
-//2.remove todo by id
-//3.save and rerender todo list
+//1.add even handler to checkbox
+//2.modify the correct objects
+//3.save and rerender
 
 
 //fetch existing todos from localstorage
@@ -28,6 +28,15 @@ const saveTodos = function (todos) {
             todos.splice(todoIndex, 1)
         }
 
+    }
+
+    const toggleTodo = function (id) {
+        const todo = todos.find(function (todo) {
+            return todo.id === id
+        }) 
+        if (todo !== undefined) {
+            todo.completed = !todo.completed
+        }
     }
 
 
@@ -73,7 +82,13 @@ const generateTodoDom = function (todo) {
     const removeButton = document.createElement("button")
 
 checkbox.setAttribute("type", "checkbox")
+checkbox.checked = todo.completed
 todoEl.appendChild(checkbox)
+checkbox.addEventListener("change", function () {
+    toggleTodo(todo.id)
+    saveTodos(todos)
+    rendertodos(todos, filters)
+})
 
     todoText.textContent = todo.text
     todoEl.appendChild(todoText)
