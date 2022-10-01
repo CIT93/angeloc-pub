@@ -1,19 +1,20 @@
-const notes = [{
-    title: "my next trip",
-    body: "I would like to go back home"
-    }, {
-    title: "habbits to work on",
-    body: "Exercise. running more."
-    }, {
-    title: "office modification",
-    body: "get a new seat"
-    }]
+let notes = []
 
     document.querySelector("#create-note").addEventListener("click", function (e) {
-       e.target.textContent = "button was clicked"
+       notes.push ({
+        title: "",
+        body: ""
+       })
+       localStorage.setItem("notes", JSON.stringify(notes))
+       renderNotes(notes, filters)
     })
 
+//check for existing save data
+const notesJSON = localStorage.getItem("notes")
 
+    if (notesJSON !== null) {
+
+    }
 
 
 document.querySelector("#search-text").addEventListener("input", function (e) {
@@ -33,7 +34,14 @@ const renderNotes = function (notes, filters) {
 
     filteredNotes.forEach(function (notes) {
         const noteEl = document.createElement("p")
-        noteEl.textContent = note.title
+
+        if (note.title.length > 0) {
+            noteEl.textContent = note.title
+        } else {
+            noteEl.textContent = "unnamed note"
+        }
+
+       
         document.querySelector("#notes").appendChild(noteEl)
     })
 
@@ -50,18 +58,7 @@ const renderNotes = function (notes, filters) {
         console.log(e.target.value)
     })
 
-    const user = {
-        name: "angelo",
-        age: "20"
-    }
-
-
-    const userJson = localStorage.getItem("user")
-   // const user = JSON.parse(userJson)
-    console.log(`${userJson.name} is ${userJson.age}`)
-   // const userJson = JSON.stringify(user)
-    //console.log(userJson)
-   // localStorage.setItem("user", userJson)
+   
     //DOM - Document object model
 
 //query and remove
