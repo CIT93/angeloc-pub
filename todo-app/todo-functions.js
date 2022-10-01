@@ -1,3 +1,8 @@
+//1.wire up button event
+//2.remove todo by id
+//3.save and rerender todo list
+
+
 //fetch existing todos from localstorage
 const getSavedToDo = function () {
     const todosJSON = localStorage.getItem("todos")
@@ -13,6 +18,18 @@ const getSavedToDo = function () {
 const saveTodos = function (todos) {
     localStorage.setItem("todos", JSON.stringify(todos))
 }
+
+    const removeTodo = function (id) {
+        const todoIndex = todos.findIndex(function (todo) {
+            return todo.id === id
+        })
+      
+        if   (todoIndex > -1) {
+            todos.splice(todoIndex, 1)
+        }
+
+    }
+
 
 debugger
 
@@ -63,6 +80,11 @@ todoEl.appendChild(checkbox)
 
     removeButton.textContent = "x"
     todoEl.appendChild(removeButton)
+    removeButton.addEventListener("click", function () {
+        removeTodo(todo.id)
+        saveTodos(todos)
+        renderTodos(todos, filters)
+    })
 
     return todoEl
 }
