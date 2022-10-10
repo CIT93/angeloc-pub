@@ -1,4 +1,4 @@
-const notes = getSavedNotes()
+let notes = getSavedNotes()
 
     document.querySelector("#create-note").addEventListener("click", function (e) {
         const id =uuidv4()
@@ -36,7 +36,12 @@ const filters = {
         console.log(e.target.value)
     })
 
-   
+   window.addEventListener("storage", function (e) {
+    if (e.key === "notes") {
+        notes = JSON.parse(e.newValue)
+        renderNotes(notes, filters)
+    }
+   })
     //DOM - Document object model
 
 //query and remove
