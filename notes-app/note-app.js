@@ -43,7 +43,7 @@ const filters = {
     }
    })
 
-const now = new date()
+//const now = new date()
 const timestamp = now.getTime()
 
 
@@ -67,9 +67,15 @@ if (dateOneTimestamp < dateTwoTimestamp) {
     console.log(dateTwo.toString())
 }
 
+//const now = moment()
+//now.subtract(1, "week").subtract(20, "days")
+//console.log(now.format("mmmm do, yyyy"))
+//console.log(now.fromNow())
+//const nowTimestamp = now.valueOf()
 
-    //DOM - Document object model
+//console.log(moment(nowTimestamp).toString())
 
-//query and remove
-//const p = document.querySelector("p")
-//p.remove()
+  const birthday = moment()  
+birthday.year(2001).month(0).date(6)
+console.log(birthday.format("mmm d, YYYY"))
+
