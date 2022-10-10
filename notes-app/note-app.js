@@ -1,13 +1,15 @@
 const notes = getSavedNotes()
 
     document.querySelector("#create-note").addEventListener("click", function (e) {
+        const id =uuidv4()
+
        notes.push ({
-        id: uuidv4(),
+        id: id,
         title: "",
         body: ""
        })
        saveNotes(notes)
-       location.assign("/edit.html")
+       location.assign(`/edit.html#$(id)`)
     })
 
 

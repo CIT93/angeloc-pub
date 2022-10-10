@@ -43,7 +43,7 @@ if (notesJSON !== null) {
         } else {
             noteEl.textContent = "unnamed note"
         }
-        textEl.setAttribute("href", "/edit.html")
+        textEl.setAttribute("href", `/edit.html#$(notes.id)`)
          noteEl.appendChild(textEl)
 
         return noteEl
