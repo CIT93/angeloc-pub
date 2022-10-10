@@ -42,6 +42,32 @@ const filters = {
         renderNotes(notes, filters)
     }
    })
+
+const now = new date()
+const timestamp = now.getTime()
+
+
+const myDate = new date(timestamp)
+console.log(myDate.getFullYear())
+//console.log(`year: ${now.getFullYear()}`)
+//console.log(`month: ${now.getMonth()}`)
+//console.log(`day of month: ${now.getDate()}`)
+//console.log(`hour: ${now.getHours()}`)
+//console.log(`minute: ${now.getMinutes()}`)
+//console.log(`seconds: ${now.getSeconds()}`)
+
+const dateOne = new date("october 10 2022 3:40:00")
+const dateTwo = new date()
+const dateOneTimestamp = dateOne.getTime()
+const dateTwoTimestamp = dateTwo.getTime()
+
+if (dateOneTimestamp < dateTwoTimestamp) {
+    console.log(dateOne.toString())
+}else if (dateTwoTimestamp < dateOneTimestamp) {
+    console.log(dateTwo.toString())
+}
+
+
     //DOM - Document object model
 
 //query and remove
