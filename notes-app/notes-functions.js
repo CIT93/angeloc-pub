@@ -54,10 +54,49 @@ const savedNotes = function (notes) {
     localStorage.setItem("notes", JSON.stringify(notes))
 }
 
+const sortNotes = function (notes, sortBy) {
+if (sortBy === "byEdited") {
+return notes.sort(function (a, b) {
+if (a.updatedAT > b.updatedAT){
+return -1
+}else if (a.updatedAT < b.updatedAT) {
+    return 1
+}else {
+    return 0
+}
+
+     })
+    }else if (sortBy === "byCreated") {
+        return notes.sort (function (a, b) {
+if (a.createdAt > b.createdAt) {
+    return -1
+}else if (a.createdAt < b.createdAt) {
+    return 1
+}else {
+    return 0
+}
+        })
+    }else if (sortBy === "alphabetical") {
+        return notes.sort(function (a, b) {
+if (a.title.toLowerCase() < b.title.toLowerCase()) {
+    return -1
+}else if (a.title.toLowerCase() > b.title.toLowerCase()) {
+    return 1
+}else {
+    return 0
+}
+        })
+    } else {
+        return notes
+    }
+}
+
+
 
 
 //render application notes
 const renderNotes = function (notes, filters) {
+    notes = sortNotes(notes, filters.sortBy)
     const filteredNotes = notes.filter(function () {
         return note.title.toLowerCase().includes(filter.searchText.toLowerCase())
     })

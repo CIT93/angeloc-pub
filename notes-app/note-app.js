@@ -22,7 +22,8 @@ console.log(e.target.value)
 })
 
 const filters = {
-    searchText: ""
+    searchText: "",
+    sortBy: "byEdited"
 }
 
 
@@ -35,7 +36,8 @@ const filters = {
     })
 
     document.querySelector("#filter-by").addEventListener("change", function (e) {
-        console.log(e.target.value)
+       filters.sortBy = e.target.value
+       renderNotes(notes, filters)
     })
 
    window.addEventListener("storage", function (e) {
