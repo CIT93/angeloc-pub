@@ -7,7 +7,7 @@ const notes = getSavedNotes()
         body: ""
        })
        saveNotes(notes)
-       renderNotes(notes, filters)
+       location.assign("/edit.html")
     })
 
 
