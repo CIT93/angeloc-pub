@@ -1,14 +1,30 @@
 document.querySelector("button").addEventListener("click", function (e) {
     e.target.textContent = "Button pressed",
   document.querySelector("body").appendChild(); 
-let eatBefore = TimeToEatBefore(timeBeforeWork);
+let statusToday = statusToday(timeBeforeWork);
 document.getElementById("output").innerHTML = `The time is ${currentTime} and you have ${timeBeforeWork} to get some ${TimeToEatBefore} food.`
 });
+const now = moment()
+console.log(now.toString())
 
 function updateDOM(text, element) {
 let newElement = document.createElement(element);
 newElement.textContent = text;
 output.append(newElement);
+}
+
+    const getSavedStatusDay = function () {
+        const statusTodayJSON = localStorage.getItem("statusToday")
+        if (statusTodayJSON !== null) {
+            return JSON.parse(statusTodayJSON)
+        }else{
+            return []
+        }
+    }
+
+
+const savestatusToday = function (statusToday) {
+localStorage.setItem("statusToday", JSON.stringify(statusToday))
 }
 
 const ps = document.querySelectorAll("p")
@@ -97,11 +113,24 @@ document.querySelector("body").appendChild(p)
 //render
 const renderStatusToday = function (statusToday, filters) {
   //I know this is saying incorrect but I placed the comma and even the correct () but still saying incorrect
-    let filterStatusToday = statusToday.filter(function (statusToday)); {
+    let filterStatusToday = statusToday.filter(function (statusToday) {
         return statusToday.text.toLowerCase().includes(filters.searchText.toLowerCase())
-    }
+    })
 
-};
+}
+
+function rendermyDay(myDay, filters) {
+    let filtermyDay = myDay.filter(function (myDay) {
+    });
+
+}
+
+
+rendermyDay(myDay, filters)
+let filter = {
+    searchText: "",
+    daytaskcompleted: false
+   }
 
 
 renderStatusToday(statusToday, filters)
