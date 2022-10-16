@@ -12,7 +12,7 @@ let todos = getSavedToDo()
    
 
 
-document.querySelector("#add-todo").addEventListener("click", function (e) {
+document.querySelector("#add-todo").addEventListener("click",  (e) => {
 console.log("add new todo")
 })
 
@@ -22,12 +22,12 @@ console.log("add new todo")
 
     rendertodo(todos, filters)
 
-document.querySelector("#search-Text").addEventListener("input", function (e) {
+document.querySelector("#search-Text").addEventListener("input",(e) => {
     filters.searchText = e.target.value
     rendertodo(todos, filters)
 })
 
-document.querySelector("#new-todo").addEventListener("submit", function () {
+document.querySelector("#new-todo").addEventListener("submit", () => {
     e.preventDefault()
     todo.push({
         id: uuid4(),
@@ -39,7 +39,7 @@ document.querySelector("#new-todo").addEventListener("submit", function () {
     e.target.elements.text.value = ""
 })
 
-document.querySelector("#hide-completed").addEventListener("change", function (e) {
+document.querySelector("#hide-completed").addEventListener("change", (e) => {
     filters.hidecompleted = e.target.checked
     rendertodo(todos, filters)
 })
