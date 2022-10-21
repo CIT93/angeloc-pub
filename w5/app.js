@@ -41,7 +41,7 @@ if (myTimeToDrive) {
     availableTime = timeBeforeWork - 0.10
 }
     
-    displayOnPage("Time before work today")
+    showOnPage("Time before work today")
 
       if (currentTime === 9) {
         showOnPage("You have time for cereal")
