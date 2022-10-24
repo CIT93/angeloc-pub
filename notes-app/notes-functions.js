@@ -1,11 +1,28 @@
+'use strict'
+const public = true
+let data
+const processData = () => {
+    data = '123456654321'
+}
+processData()
+console.log(data)
+
 const uuid4 = require("../todo-app/uuid4")
 
 console.log(uuid4())
 
 const getSavedNotes = () => {
 
+try {
+    return notesJSON ? JSON.parse (notesJSON) : []
+}catch (e) {
+return []
+}
+
+
+
 const notesJSON = localStorage.getItem("notes")
-return notesJSON ? JSON.parse (notesJSON) : []
+
 
 
 }

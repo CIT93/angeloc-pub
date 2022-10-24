@@ -1,3 +1,4 @@
+'use strict'
 let notes = getSavedNotes()
 
     document.querySelector("#create-note").addEventListener("click",(e) => {
