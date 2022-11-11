@@ -37,7 +37,7 @@ sales.addeventlistner("click", (e) => {
   e.preventDefault();
    randomitemSold();
 const final = document.createElement("h2")
-final.textContent = outcome [1]
+final.textContent = outcome [0]
 finalSaleSheet.appendChild(final)
   }
 );
